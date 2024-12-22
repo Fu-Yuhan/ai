@@ -17,5 +17,7 @@ func MustLoad(filename string, v interface{}) {
 	if err != nil {
 		panic("parse config content error:" + err.Error())
 	}
-	return
+	// return
+
+	
 }
