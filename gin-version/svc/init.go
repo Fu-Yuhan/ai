@@ -12,7 +12,7 @@ import (
 type ServiceContext struct {
 	Config config.Config
 	Redis  *redisx.Client
-	Mysql  sqlx.SqlConn
+	Postgres  sqlx.SqlConn
 	CacheX *CacheX
 }
 
@@ -27,7 +27,7 @@ func NewServiceContext(c config.Config) *ServiceContext {
 			Password: c.Redis.Password,
 			DB:       c.Redis.DB,
 		}),
-		Mysql:  sqlx.NewPostgres(c.Mysql.DataSource),
+		Postgres:  sqlx.NewPostgres(c.Postgres.DataSource),
 		CacheX: NewCacheX(c),
 	}
 }

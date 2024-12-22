@@ -1,5 +1,5 @@
 package config
 
-type Mysql struct {
+type Postgres struct {
 	DataSource string `yaml:"DataSource"`
 }
